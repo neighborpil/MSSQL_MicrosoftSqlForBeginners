@@ -2,18 +2,31 @@
 Examples Codes for Training
 ==========================
 ## Infos
- - ¿¬°á ¹®ÀÚ¿­ : Server=localhost\SQLEXPRESS01;Database=master;Trusted_Connection=True;
- - SqlServer ¼³Ä¡ ·Î±× Æú´õ : C:\Program Files\Microsoft SQL Server\150\Setup Bootstrap\Log\20210803_085457
- - ¼³Ä¡ ¹Ìµğ¾î Æú´õ : C:\SQL2019\Express_ENU
- - ¼³Ä¡ ¸®¼Ò½º Æú´õ : C:\Program Files\Microsoft SQL Server\150\SSEI\Resources
+ - ì—°ê²° ë¬¸ìì—´ : Server=localhost\SQLEXPRESS01;Database=master;Trusted_Connection=True;
+ - SqlServer ì„¤ì¹˜ ë¡œê·¸ í´ë” : C:\Program Files\Microsoft SQL Server\150\Setup Bootstrap\Log\20210803_085457
+ - ì„¤ì¹˜ ë¯¸ë””ì–´ í´ë” : C:\SQL2019\Express_ENU
+ - ì„¤ì¹˜ ë¦¬ì†ŒìŠ¤ í´ë” : C:\Program Files\Microsoft SQL Server\150\SSEI\Resources
 
-## ¼³Ä¡
- 1. https://www.microsoft.com/en-us/sql-server/sql-server-downloads ÆäÀÌÁö¿¡¼­ Express ¼³Ä¡
- 2. ¿¹Á¦ ÆÄÀÏÀ» C:\Program Files\Microsoft SQL Server\MSSQL11.MSSQLSERVER\MSSQL\DATA Æú´õ¿¡ ³Ö±â
- 3. SQL Management Studio(SSMS) ¼³Ä¡ (https://docs.microsoft.com/ko-kr/sql/ssms/download-sql-server-management-studio-ssms?redirectedfrom=MSDN&view=sql-server-ver15)
- 4. ¿¹Á¦ÆÄÀÏÀ» C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS01\MSSQL\DATA Æú´õ¿¡ º¹»ç
- 5. SSMS ½ÇÇà ÈÄ DB¿¡ Á¢¼Ó
- 6. È­¸é ÁÂÃø Å½»ö±â¿¡¼­ Database ¿ìÅ¬¸¯ ÇÏ¿© Attach ¼±ÅÃ
- 7. È­¸é¿¡¼­ ·Î±×´Â »èÁ¦
- 8. ¿Ï·á
+## ì„¤ì¹˜
+ 1. https://www.microsoft.com/en-us/sql-server/sql-server-downloads í˜ì´ì§€ì—ì„œ Express ì„¤ì¹˜
+ 2. ì˜ˆì œ íŒŒì¼ì„ C:\Program Files\Microsoft SQL Server\MSSQL11.MSSQLSERVER\MSSQL\DATA í´ë”ì— ë„£ê¸°
+ 3. SQL Management Studio(SSMS) ì„¤ì¹˜ (https://docs.microsoft.com/ko-kr/sql/ssms/download-sql-server-management-studio-ssms?redirectedfrom=MSDN&view=sql-server-ver15)
+ 4. ì˜ˆì œíŒŒì¼ì„ C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS01\MSSQL\DATA í´ë”ì— ë³µì‚¬
+ 5. SSMS ì‹¤í–‰ í›„ DBì— ì ‘ì†
+ 6. í™”ë©´ ì¢Œì¸¡ íƒìƒ‰ê¸°ì—ì„œ Database ìš°í´ë¦­ í•˜ì—¬ Attach ì„ íƒ
+ 7. í™”ë©´ì—ì„œ ë¡œê·¸ëŠ” ì‚­ì œ
+ 8. ì™„ë£Œ
 
+## Schema
+ - Logical and Physical group of database
+ - HumanResources is Schema
+ - Department, Employee, EmployeeDepartmentHistory and so on are tables
+![image](https://user-images.githubusercontent.com/22423285/128100338-68ae23e3-f5e9-44e0-85b5-28dc5261ec25.png)
+ - Table is a collection of data in rows and cols
+
+#### â€» ë‹¨ì¶•í‚¤
+ - ì¿¼ë¦¬ì‹¤í–‰ : F5
+
+
+#### â€» í•œê¸€ì„ ì‚¬ìš©í•˜ë ¤ë©´?
+ - SSMSì˜ ì„¤ì •ì—ì„œ Languageë¥¼ í•œêµ­ì–´ë¡œ ë°”ê¾¸ë©´ í•œê¸€ ì‚¬ìš© í•  ìˆ˜ ìˆë‹¤.
