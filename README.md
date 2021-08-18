@@ -50,3 +50,12 @@ Examples Codes for Training
  - TOP 숫자 PERCENT : 퍼센트만큼 가져온다
  - SELECT TOP 5 FirstName, MiddleName, LastName
    FROM Person.Person;
+ - select top 100 *
+   from Production.Product;
+ - Alias 사용법 : AS [별칭] 또는 AS "별칭"
+ - select top 100 
+	    FirstName AS [Customer First Name], LastName AS "Customer Last Name"
+   from person.person;
+ - View를 쿼리할때도 동일하다
+ - select FirstName, LastName, EmailAddress, PhoneNumber
+   from sales.vIndividualCustomer;
