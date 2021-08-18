@@ -59,3 +59,8 @@ Examples Codes for Training
  - View를 쿼리할때도 동일하다
  - select FirstName, LastName, EmailAddress, PhoneNumber
    from sales.vIndividualCustomer;
+### Where clause
+ - <> : not operatior
+ - 대부분의 DBMS는 incase sensitive하다
+   select * from HumanResources.vEmployee where FirstName = 'Chris'
+   select * from HumanResources.vEmployee where FirstName = 'CHRIS'
