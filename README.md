@@ -30,3 +30,23 @@ Examples Codes for Training
 
 #### ※ 한글을 사용하려면?
  - SSMS의 설정에서 Language를 한국어로 바꾸면 한글 사용 할 수 있다.
+
+### Select
+ - select (4*4)-(3/2);
+ - select 'test';
+ - select 'Test', 3*3;
+ - SELECT [Column 1], [Column 2], ..., [Column n]
+   FROM [Database Name].[Schema Name].[Table Name]
+ - SELECT FirstName
+   FROM Person.Person
+
+#### ※ 테이블, 컬럼에 대소문자 구분하지 않을 수 있다
+ - select firstname, lastname from person.person;
+ - select Firstname, LastName from Person.person;
+
+### Select시 가져오는 rows 리미트 걸기
+ - TOP operator를 쓰면 된다
+ - TOP 숫자
+ - TOP 숫자 PERCENT : 퍼센트만큼 가져온다
+ - SELECT TOP 5 FirstName, MiddleName, LastName
+   FROM Person.Person;
