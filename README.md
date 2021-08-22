@@ -64,3 +64,36 @@ Examples Codes for Training
  - 대부분의 DBMS는 incase sensitive하다
    select * from HumanResources.vEmployee where FirstName = 'Chris'
    select * from HumanResources.vEmployee where FirstName = 'CHRIS'
+
+#### Where clause LIKE
+ - '_'를 통하여 한글자 모를 경우 사용 가능
+   SELECT *
+   FROM HumanResources.vEmployee
+   WHERE FirstName LIKE 'MI_';
+   
+#### Where clause Wirdcard Expression
+ - D로 시작하고 n으로 끝나는데 중간 글자가 a 또는 o
+   SELECT *
+   FROM HumanResources.vEmployee
+   WHERE FirstName LIKE 'D[a,o]n';
+ - D로 시작하고 n으로 끝나는데 중간 글자가 a-f, r-z범위
+   SELECT *
+   FROM HumanResources.vEmployee
+   WHERE FirstName LIKE 'D[a-f, r-z]n';
+ - D로 시작하고 n으로 끝나는데 중간 글자가 a가 아님
+   SELECT *
+   FROM HumanResources.vEmployee
+   WHERE FirstName LIKE 'D[^a]n';
+
+#### Where clause filtering null value
+ - IS NULL keyword 사용
+   SELECT *
+   FROM Person.Person
+   WHERE MiddleName IS NULL;
+ - IS NOT NULL : null이 아닌 것
+   SELECT *
+   FROM Person.Person
+   WHERE MiddleName IS NOT NULL;
+ - 
+
+
