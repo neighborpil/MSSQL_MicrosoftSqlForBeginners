@@ -35,10 +35,8 @@ Examples Codes for Training
  - select (4*4)-(3/2);
  - select 'test';
  - select 'Test', 3*3;
- - SELECT [Column 1], [Column 2], ..., [Column n]
-   FROM [Database Name].[Schema Name].[Table Name]
- - SELECT FirstName
-   FROM Person.Person
+ - SELECT [Column 1], [Column 2], ..., [Column n] FROM [Database Name].[Schema Name].[Table Name]
+ - SELECT FirstName FROM Person.Person
 
 #### ※ 테이블, 컬럼에 대소문자 구분하지 않을 수 있다
  - select firstname, lastname from person.person;
@@ -48,22 +46,18 @@ Examples Codes for Training
  - TOP operator를 쓰면 된다
  - TOP 숫자
  - TOP 숫자 PERCENT : 퍼센트만큼 가져온다
- - SELECT TOP 5 FirstName, MiddleName, LastName
-   FROM Person.Person;
- - select top 100 *
-   from Production.Product;
+   + SELECT TOP 5 FirstName, MiddleName, LastName FROM Person.Person;
+   + select top 100 * from Production.Product;
  - Alias 사용법 : AS [별칭] 또는 AS "별칭"
- - select top 100 
-	    FirstName AS [Customer First Name], LastName AS "Customer Last Name"
+   + select top 100 FirstName AS [Customer First Name], LastName AS "Customer Last Name"
    from person.person;
  - View를 쿼리할때도 동일하다
- - select FirstName, LastName, EmailAddress, PhoneNumber
-   from sales.vIndividualCustomer;
+   + select FirstName, LastName, EmailAddress, PhoneNumber from sales.vIndividualCustomer;
 ### Where clause
  - <> : not operatior
  - 대부분의 DBMS는 incase sensitive하다
-   select * from HumanResources.vEmployee where FirstName = 'Chris'
-   select * from HumanResources.vEmployee where FirstName = 'CHRIS'
+   + select * from HumanResources.vEmployee where FirstName = 'Chris'
+   + select * from HumanResources.vEmployee where FirstName = 'CHRIS'
 
 #### Where clause LIKE
  - '_'를 통하여 한글자 모를 경우 사용 가능
@@ -73,27 +67,17 @@ Examples Codes for Training
    
 #### Where clause Wirdcard Expression
  - D로 시작하고 n으로 끝나는데 중간 글자가 a 또는 o
-   SELECT *
-   FROM HumanResources.vEmployee
-   WHERE FirstName LIKE 'D[a,o]n';
+   + SELECT * FROM HumanResources.vEmployee WHERE FirstName LIKE 'D[a,o]n';
  - D로 시작하고 n으로 끝나는데 중간 글자가 a-f, r-z범위
-   SELECT *
-   FROM HumanResources.vEmployee
-   WHERE FirstName LIKE 'D[a-f, r-z]n';
+   + SELECT * FROM HumanResources.vEmployee WHERE FirstName LIKE 'D[a-f, r-z]n';
  - D로 시작하고 n으로 끝나는데 중간 글자가 a가 아님
-   SELECT *
-   FROM HumanResources.vEmployee
-   WHERE FirstName LIKE 'D[^a]n';
+   + SELECT * FROM HumanResources.vEmployee WHERE FirstName LIKE 'D[^a]n';
 
 #### Where clause filtering null value
  - IS NULL keyword 사용
-   SELECT *
-   FROM Person.Person
-   WHERE MiddleName IS NULL;
+   + SELECT * FROM Person.Person WHERE MiddleName IS NULL;
  - IS NOT NULL : null이 아닌 것
-   SELECT *
-   FROM Person.Person
-   WHERE MiddleName IS NOT NULL;
- - 
+   + SELECT * FROM Person.Person WHERE MiddleName IS NOT NULL;
+
 
 
