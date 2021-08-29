@@ -79,5 +79,29 @@ Examples Codes for Training
  - IS NOT NULL : null이 아닌 것
    + SELECT * FROM Person.Person WHERE MiddleName IS NOT NULL;
 
+#### Order by clause
+ - by column name, column ordinal(starts from 1), column alias
 
+#### Order of sql excuetes
+ 1. FROM
+ 2. WHERE
+ 3. GROUP BY
+ 4. HAVING
+ 5. SELECT
+ 6. ORDER BY
 
+ - 이 순서로 인하여 WHERE, GROUP BY, HAVING에서는 Column alias를 못 쓰지만, ORDER BY에서는 사용하는 것이 가능하다
+
+```
+-- order by lastname and firstname
+select firstname as [customer name], lastname
+from Sales.vIndividualCustomer
+order by 2, [customer name];
+
+select LastName, FirstName, SalesQuota [Sales Quota]
+from Sales.vSalesPerson
+where SalesQuota >= 250000
+order by [Sales Quota] desc, LastName asc
+```
+
+### Join
