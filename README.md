@@ -21,6 +21,7 @@ Examples Codes for Training
  - Logical and Physical group of database
  - HumanResources is Schema
  - Department, Employee, EmployeeDepartmentHistory and so on are tables
+
 ![image](https://user-images.githubusercontent.com/22423285/128100338-68ae23e3-f5e9-44e0-85b5-28dc5261ec25.png)
  - Table is a collection of data in rows and cols
 
