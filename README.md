@@ -106,3 +106,27 @@ order by [Sales Quota] desc, LastName asc
 ```
 
 ### Join
+#### Inner Join
+ - only returns when joining columns exists
+ - join or inner join
+```
+select p.name, p.ProductNumber, p.ProductSubcategoryID, ps.name AS "ProductSubCategory Name"
+from Production.Product p
+inner join Production.ProductSubcategory ps
+on p.ProductSubcategoryID = ps.ProductSubcategoryID
+
+select 
+	ps.Name as ProductSubCatetoryName,
+	pc.Name as ProductCategoryName
+from Production.ProductSubcategory ps
+inner join Production.ProductCategory pc
+on ps.ProductCategoryID = pc.ProductCategoryID
+
+select p.FirstName, p.LastName, e.EmailAddress, pp.PhoneNumber
+from Person.Person p
+inner join Person.EmailAddress e
+on p.BusinessEntityID = e.BusinessEntityID
+inner join Person.PersonPhone pp
+on pp.BusinessEntityID = pp.BusinessEntityID
+```
+
