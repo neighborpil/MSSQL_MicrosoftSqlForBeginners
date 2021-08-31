@@ -211,3 +211,31 @@ select SUM(FirstName)
 from Person.Person
 ```
 
+### Group By
+```
+select SalesPersonId, SUM(TotalDue) as [Total Sales]
+from Sales.SalesOrderHeader
+group by SalesPersonID
+
+select 
+	ProductID, 
+	sum(Quantity) as [Total in Stock],
+	count(*) as [Total Locations]
+from Production.ProductInventory
+group by ProductID
+
+select 
+	st.Name AS [Territory Name], 
+	p.FirstName + ' ' + p.LastName AS [Sales Person Name],
+	SUM(TotalDue) as [Total Sales]
+from Sales.SalesOrderHeader soh
+inner join Sales.SalesPerson sp
+on sp.BusinessEntityID = soh.SalesPersonID
+inner join Person.Person p
+on p.BusinessEntityID = sp.BusinessEntityID
+inner join Sales.SalesTerritory st
+on st.TerritoryID = soh.TerritoryID
+where OrderDate Between '1/1/2006' AND '12/31/2006'
+group by st.Name, p.FirstName + ' ' + p.LastName
+order by 1, 2
+```
