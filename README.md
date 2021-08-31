@@ -239,3 +239,47 @@ where OrderDate Between '1/1/2006' AND '12/31/2006'
 group by st.Name, p.FirstName + ' ' + p.LastName
 order by 1, 2
 ```
+
+### Having Clause
+
+```
+select 
+	st.Name as [Territory Name],
+	sum(TotalDue) as [Total Sales - 2006]
+from Sales.SalesOrderHeader soh
+inner join sales.SalesTerritory st
+on st.TerritoryID = soh.TerritoryID
+where OrderDate between '1/1/2006' and '12/31/2006'
+group by st.Name
+having sum(TotalDue) > 4000000
+order by 1
+
+select 
+	ps.Name as [SubCategory Name],
+	count(*) as [Product Count]
+from Production.Product p
+inner join Production.ProductSubcategory ps
+on ps.ProductSubcategoryID = p.ProductSubcategoryID
+group by ps.Name
+having count(*) >= 15
+order by 1
+
+select 
+	Department as [Department Name],
+	Count(*) as [Employee Count]
+from HumanResources.vEmployeeDepartment
+group by Department
+having count(*) in (6, 10)
+
+select 
+	SalesPersonID,
+	SUM(TotalDue) as [Total Sales Amount],
+	Count(*) as [Total Sales Count]
+from Sales.SalesOrderHeader
+where OrderDate between '1/1/2006' and '12/31/2006'
+	and SalesPersonID is not null
+group by SalesPersonID
+having SUM(TotalDue) > 2000000
+	AND COUNT(*) > 75
+order by [Total Sales Amount] desc
+```
