@@ -130,3 +130,84 @@ inner join Person.PersonPhone pp
 on pp.BusinessEntityID = pp.BusinessEntityID
 ```
 
+#### Left Outer Join, Right Outer Join
+```
+select p.Name, p.ProductNumber, ps.Name as ProductSubCategoryName
+from Production.Product p
+left outer join Production.ProductSubcategory ps
+on ps.ProductSubcategoryID = p.ProductSubcategoryID
+
+select p.Name, p.ProductNumber, ps.Name as ProductSubCategoryName
+from Production.Product p
+right outer join Production.ProductSubcategory ps
+on ps.ProductSubcategoryID = p.ProductSubcategoryID
+
+select 
+	p.FirstName, p.LastName,
+	soh.SalesOrderNumber,
+	soh.TotalDue as SalesAmount,
+	t.Name as TerrioryName
+from Sales.SalesOrderHeader soh
+left outer join Sales.SalesPerson sp
+on sp.BusinessEntityID = soh.SalesPersonID
+left outer join HumanResources.Employee e
+on e.BusinessEntityID = sp.BusinessEntityID
+left outer join Person.Person p
+on p.BusinessEntityID = e.BusinessEntityID
+left outer join Sales.SalesTerritory t
+on t.TerritoryID = soh.TerritoryID
+where t.Name = 'Northwest'
+order by 4 desc
+```
+
+### Aggrigate functions
+ - MAX
+```
+select MAX(TotalDue)
+from Sales.SalesOrderHeader
+```
+ - MIN
+
+```
+select MIN(TotalDue)
+from Sales.SalesOrderHeader
+```
+ - COUNT
+```
+select COUNT(TotalDue)
+from Sales.SalesOrderHeader
+
+```
+   + 기본적으로 NOT NULL조건인것과 같음
+```
+SELECT COUNT(SalesPersonID)
+FROM Sales.SalesOrderHeader
+
+SELECT COUNT(*)
+FROM Sales.SalesOrderHeader
+WHERE SalesPersonID IS NOT NULL
+```
+ - count distinct
+```
+SELECT COUNT(DISTINCT FirstName)
+FROM Person.Person
+```
+ - AVG
+```
+select avg(TotalDue)
+from Sales.SalesOrderHeader
+```
+ - SUM
+```
+select SUM(TotalDue)
+from Sales.SalesOrderHeader
+
+SELECT SUM(TotalDue)
+FROM Sales.SalesOrderHeader
+WHERE OrderDate between '2006-1-1' AND '2006-12-31'
+
+-- Error: nvarchar cannot be added
+select SUM(FirstName)
+from Person.Person
+```
+
